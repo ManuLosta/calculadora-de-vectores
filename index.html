@@ -5,8 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculadora de Vectores Beta</title>
+
+    <!-- STYLES -->
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
+    <header class="header">
+      <h1 class="header__title">Calculadora de Vectores</h1>
+    </header>
+    <main>
+      <section class="main__input">
+        <label for="calcs">Cálculo:</label>
+        <select name="calcs" id="calcs">
+          <option value="cartesiana_a_polar">Cartesiana a polar</option>
+          <option value="polar_a_cartesiana">Polar a cartesiana</option>
+        </select>
+        <span>v = (</span>
+        <input id="firstParameter" type="text">
+        <span>;</span>
+        <input id="secondParameter" type="text">
+        <span>)</span>
+        <button id="btnCalculate" class="main__input--btn" onclick="calculate()">Calcular</button>
+      </section>
+      <section class="main__result">
+        <p class="main__result--output" id="output"></p>
+      </section>
+    </main>
     <script src="./js/index.js"></script>
   </body>
 </html>
