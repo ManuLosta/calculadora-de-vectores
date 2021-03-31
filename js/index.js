@@ -48,15 +48,10 @@ class Conversor {
       return this.corregirAngulo(x1, y1);
     }
 
-    switch (this.corregirCuadrante(x1, y1)) {
-      case 4:
-        return Number(o) + 360;
-      case 3:
-        return Number(o) + 180;
-      case 2:
-        return Number(o) + 180;
-      default:
-        return o;
+    if ((x1 < 0 && y1 < 0) || (x1 > 0 && y1 < 0)) {
+      return Number(o) + 360;
+    } else {
+      return o;
     }
   }
 
@@ -71,9 +66,7 @@ class Conversor {
   }
 
   corregirCuadrante(x1, y1) {
-    if (x1 < 0 && y1 > 0) {
-      return 2;
-    } else if (x1 < 0 && y1 < 0) {
+    if (x1 < 0 && y1 < 0) {
       return 3;
     } else if (x1 > 0 && y1 < 0) {
       return 4;
@@ -178,13 +171,12 @@ function cambiarVisual() {
   const calculo = document.getElementById('calcs').value;
   const span = document.getElementById('degree-symbol');
 
-
   if (calculo == 'polar_a_cartesiana') {
     span.classList.add('show');
   } else {
     span.classList.remove('show');
   }
-  
+
   start();
 }
 
