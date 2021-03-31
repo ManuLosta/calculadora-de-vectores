@@ -1,0 +1,21 @@
+.header__title {
+  font-size: 3rem;
+}
+
+.main__input {
+  height: auto;
+}
+
+.main__input--select {
+  width: 100%;
+  margin: 20px 10vw 50px;
+}
+
+.main__input--button {
+  width: 100%;
+  margin: 30px 20%;
+}
+
+.footer {
+  position: static;
+}

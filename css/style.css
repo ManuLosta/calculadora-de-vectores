@@ -1,6 +1,6 @@
 :root {
-  --blue: rgb(86, 37, 247);
-  --white: #fff;
+  --blue: #5625f7;
+  --white: rgb(240, 240, 240);
   --black: #181818;
 }
 
@@ -16,6 +16,7 @@ html {
 
 body {
   font-family: 'IBM Plex Sans', sans-serif;
+  background-color: var(--white);
 }
 
 header {
@@ -32,6 +33,7 @@ header {
   color: var(--white);
   font-size: 4rem;
   font-weight: 700;
+  text-align: center;
 }
 
 main {
@@ -84,6 +86,7 @@ main {
   font-weight: bold;
   text-align: center;
   color: var(--black);
+  background-color: var(--white);
 }
 
 .input__declaration {
@@ -157,4 +160,31 @@ main {
   font-size: 2.4rem;
   font-weight: bold;
   color: var(--black);
+}
+
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer p {
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+  color: var(--black);
+}
+
+.footer p a {
+  text-decoration: none;
+  color: var(--blue);
+}
+
+.footer p a:hover {
+  opacity: 0.9;
 }
