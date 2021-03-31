@@ -1,0 +1,160 @@
+:root {
+  --blue: rgb(86, 37, 247);
+  --white: #fff;
+  --black: #181818;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+header {
+  width: 100%;
+  height: 150px;
+  padding: 0 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--blue);
+}
+
+.header__title {
+  color: var(--white);
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+main {
+  width: 100%;
+  height: calc(100vh - 150px);
+}
+
+.main__input {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--blue);
+}
+
+.main__input--select {
+  height: 50px;
+  padding: 10px;
+  margin-right: 20px;
+  border: none;
+  border-radius: 8px;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+  color: var(--white);
+  background-color: rgba(255, 255, 255, 0.18);
+  cursor: pointer;
+}
+
+.main__input--select:hover {
+  background-color: rgba(255, 255, 255, 0.22);
+}
+
+.main__input--select option {
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.18) !important;
+}
+
+.main__input--text {
+  width: 70px;
+  height: 50px;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+  color: var(--black);
+}
+
+.input__declaration {
+  position: relative;
+  margin: 0 10px;
+  font-size: 2.4rem;
+  font-weight: bold;
+  color: var(--white);
+}
+
+.input__declaration .span__arrow {
+  position: absolute;
+  top: -12px;
+  left: -5px;
+}
+
+.degree-symbol {
+  display: none;
+}
+
+.degree-symbol.show {
+  display: inline-block;
+}
+
+.main__input--button {
+  height: 50px;
+  margin-left: 20px;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+  color: var(--white);
+  background-color: rgba(255, 255, 255, 0.18);
+  cursor: pointer;
+}
+
+.main__input--button:hover {
+  background-color: rgba(255, 255, 255, 0.22);
+}
+
+.main__result--divider {
+  top: -190px;
+  right: 0;
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+}
+
+.main__result--divider svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 190px;
+}
+
+.main__result {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  margin-top: 190px;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+}
+
+.main__result--output {
+  margin: 0 auto;
+  font-size: 2.4rem;
+  font-weight: bold;
+  color: var(--black);
+}

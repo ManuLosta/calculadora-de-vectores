@@ -30,7 +30,7 @@ function resolverR(x1, y1) {
   if (Math.sqrt(sumaDeCuadrados) % 1 === 0) {
     r = Math.sqrt(sumaDeCuadrados);
   } else {
-    r = `sqrt(${sumaDeCuadrados})`;
+    r = `	&radic;${sumaDeCuadrados}`;
   }
 
   return r;
@@ -52,7 +52,7 @@ function resolverO(x1, y1) {
     case 2:
       return Number(o) + 180;
     default:
-      break;
+      return o;
   }
 }
 
@@ -97,5 +97,16 @@ function polarAcartesiana(r, o) {
   const y1 = parseFloat(Math.sin(gradosARadianes(o)) * r).toFixed(2);
 
   console.log(`(${x1}; ${y1})`);
-  output.innerHTML = `(${x1}; ${y1})`;
+  output.innerHTML = `v = (${x1}; ${y1})`;
+}
+
+function cambiarVisual() {
+  const calculo = document.getElementById('calcs').value;
+  const span = document.getElementById('degree-symbol');
+
+  if (calculo == 'polar_a_cartesiana') {
+    span.classList.add('show');
+  } else {
+    span.classList.remove('show');
+  }
 }

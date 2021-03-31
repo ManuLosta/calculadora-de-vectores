@@ -7,36 +7,42 @@
     <title>Calculadora de Vectores Beta</title>
 
     <!-- STYLES -->
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style.css" />
 
     <!-- GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;400;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&display=swap" rel="stylesheet" />
   </head>
   <body>
     <header class="header">
-      <h1 class="header__title">Calculadora de Vectores</h1>
+      <h1 class="header__title">Calculadora de Vectores Beta</h1>
     </header>
     <main>
-      <section class="main__input">
-        <label for="calcs">Cálculo:</label>
-        <select name="calcs" id="calcs">
+      <section class="main__input" onchange="cambiarVisual()">
+        <select class="main__input--select" name="calcs" id="calcs">
           <option value="cartesiana_a_polar">Cartesiana a polar</option>
           <option value="polar_a_cartesiana">Polar a cartesiana</option>
         </select>
-        <span>v = (</span>
-        <input id="firstParameter" type="text">
-        <span>;</span>
-        <input id="secondParameter" type="text">
-        <span>)</span>
-        <button id="btnCalculate" class="main__input--btn" onclick="calculate()">Calcular</button>
+        <span class="input__declaration"><span class="span__arrow">→</span> v = (</span>
+        <input class="main__input--text" id="firstParameter" type="text" />
+        <span class="input__declaration">;</span>
+        <input class="main__input--text" id="secondParameter" type="text" />
+        <span class="input__declaration"><span id="degree-symbol" class="degree-symbol">°</span> )</span>
+        <button class="main__input--button" id="btnCalculate" onclick="calculate()">Calcular</button>
       </section>
       <section class="main__result">
+        <div class="main__result--divider">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
+            <path
+              fill="#5625f7"
+              fill-opacity="1"
+              d="M0,128L48,128C96,128,192,128,288,160C384,192,480,256,576,245.3C672,235,768,149,864,128C960,107,1056,149,1152,181.3C1248,213,1344,235,1392,245.3L1440,256L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
+            ></path>
+          </svg>
+        </div>
         <p class="main__result--output" id="output"></p>
       </section>
+      <footer></footer>
     </main>
     <script src="./js/index.js"></script>
   </body>
