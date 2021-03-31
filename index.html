@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculadora de Vectores Beta</title>
-    <link rel="icon" href="./assets/arrow.svg">
+    <link rel="icon" href="./assets/arrow.svg" />
 
     <!-- STYLES -->
     <link rel="stylesheet" href="./css/style.css" />
-    <link rel="stylesheet" href="./css/mobile.css" media="(max-width: 676px)">
+    <link rel="stylesheet" href="./css/mobile.css" media="(max-width: 676px)" />
 
     <!-- GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -26,11 +26,10 @@
           <option value="polar_a_cartesiana">Polar a cartesiana</option>
         </select>
         <span class="input__declaration"><span class="span__arrow">→</span> v = (</span>
-        <input class="main__input--text" id="firstParameter" type="number" onchange="limpiarResultado()" />
+        <input class="main__input--text" id="firstParameter" type="number" onchange="start()" />
         <span class="input__declaration">;</span>
-        <input class="main__input--text" id="secondParameter" type="number" onchange="limpiarResultado()" />
+        <input class="main__input--text" id="secondParameter" type="number" onchange="start()" />
         <span class="input__declaration"><span id="degree-symbol" class="degree-symbol">°</span> )</span>
-        <button class="main__input--button" id="btnCalculate" onclick="start()">Calcular</button>
       </section>
       <section class="main__result">
         <div class="main__result--divider">
@@ -43,11 +42,15 @@
           </svg>
         </div>
         <p class="main__result--output" id="output"></p>
+        <div class="main__result--chart">
+          <canvas id="myChart" width="600" height="600"></canvas>
+        </div>
       </section>
       <footer class="footer">
         <p>Made by <a href="https://losta.xyz/" target="_blank">Losta</a></p>
       </footer>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
     <script src="./js/index.js"></script>
   </body>
 </html>

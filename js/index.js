@@ -14,6 +14,7 @@ class Conversor {
   calcular(x1, y1, calculo) {
     switch (calculo) {
       case 'cartesiana_a_polar':
+        this.dibujarGrafico(x1, y1);
         this.cartesianaAPolar(x1, y1);
         break;
       case 'polar_a_cartesiana':
@@ -101,30 +102,94 @@ class Conversor {
 
     console.log(`(${x1}; ${y1})`);
     output.innerHTML = `v = (${x1}; ${y1})`;
+    this.dibujarGrafico(x1, y1);
+  }
+
+  dibujarGrafico(x1, y1) {
+    const ctx = document.getElementById('myChart').getContext('2d');
+    let myChart = new Chart(ctx, {
+      type: 'scatter',
+      plugins: [
+        {
+          beforeDraw: (chart) => {
+            var xAxis = chart.scales['x-axis-1'];
+            var yAxis = chart.scales['y-axis-1'];
+            const scales = chart.chart.config.options.scales;
+            scales.xAxes[0].ticks.padding = yAxis.top - yAxis.getPixelForValue(0) + 6;
+            scales.yAxes[0].ticks.padding = xAxis.getPixelForValue(0) - xAxis.right + 6;
+          },
+        },
+      ],
+      data: {
+        datasets: [
+          {
+            label: 'Vector v',
+            data: [
+              {
+                x: 0,
+                y: 0,
+              },
+              {
+                x: x1,
+                y: y1,
+              },
+            ],
+            borderColor: '#5625f7',
+            showLine: true,
+            fill: false,
+          },
+        ],
+      },
+      options: {
+        scales: {
+          xAxes: [
+            {
+              ticks: {
+                min: -10,
+                max: 10,
+                stepSize: 1,
+                callback: (v) => (v == 0 ? '' : v),
+              },
+              gridLines: {
+                drawTicks: false,
+              },
+            },
+          ],
+          yAxes: [
+            {
+              ticks: {
+                min: -10,
+                max: 10,
+                stepSize: 1,
+                callback: (v) => (v == 0 ? '' : v),
+              },
+              gridLines: {
+                drawTicks: false,
+              },
+            },
+          ],
+        },
+      },
+    });
   }
 }
 
 function cambiarVisual() {
-  console.log('a');
   const calculo = document.getElementById('calcs').value;
   const span = document.getElementById('degree-symbol');
 
-  output.innerHTML = '';
-
-  firstParameter.value = '';
-  secondParameter.value = '';
 
   if (calculo == 'polar_a_cartesiana') {
     span.classList.add('show');
   } else {
     span.classList.remove('show');
   }
+  
+  start();
 }
 
 function start() {
-  window.calculo = new Conversor();
+  let = new Conversor();
 }
 
-function limpiarResultado() {
-  output.innerHTML = '';
-}
+start();
