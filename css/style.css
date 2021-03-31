@@ -64,6 +64,7 @@ main {
   color: var(--white);
   background-color: rgba(255, 255, 255, 0.18);
   cursor: pointer;
+  box-shadow: 0 1px 6px rgb(32 33 36 / 28%);
 }
 
 .main__input--select:hover {
@@ -87,6 +88,7 @@ main {
   text-align: center;
   color: var(--black);
   background-color: var(--white);
+  box-shadow: 0 1px 6px rgb(32 33 36 / 28%);
 }
 
 .input__declaration {
